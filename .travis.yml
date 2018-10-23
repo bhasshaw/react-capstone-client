@@ -1,3 +1,7 @@
+before_install:
+  - echo "BEFORE INSTALL START"
+  - gem install bundler
+  - echo "BEFORE INSTALL END"
 deploy:
   provider: heroku
   api_key:
@@ -5,3 +9,4 @@ deploy:
   app: sheltered-hamlet-99872
   on:
     repo: bhasshaw/react-capstone-client
+  
