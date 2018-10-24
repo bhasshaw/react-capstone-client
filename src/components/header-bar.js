@@ -10,7 +10,6 @@ export class HeaderBar extends React.Component {
     }
 
     render() {
-        // Only render the log out button if we are logged in
         let logOutButton;
         if (this.props.loggedIn) {
             logOutButton = (
@@ -18,7 +17,7 @@ export class HeaderBar extends React.Component {
             );
         }
         return (
-            <div className="header-bar">
+            <div className="container-fluid text-center header-bar">
                 <h1>App</h1>
                 {logOutButton}
             </div>
