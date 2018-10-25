@@ -12,7 +12,6 @@ export function LandingPage(props) {
 
     return (
         <div className="text-center home">
-            <h2>Welcome</h2>
             <LoginForm />
             <Link to="/register">Register</Link>
         </div>
