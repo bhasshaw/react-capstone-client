@@ -18,10 +18,12 @@ export class HeaderBar extends React.Component {
             );
         }
         return (
-            <div className="container-fluid text-center header-bar">
-                <h1>DogDates</h1>
+            <header className="masthead mb-auto text-center header-bar">
+                <div className="inner">
+                    <h1>DogDates</h1>
+                </div>
                 {logOutButton}
-            </div>
+            </header>
         );
     }
 }
