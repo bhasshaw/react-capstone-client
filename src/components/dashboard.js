@@ -6,7 +6,7 @@ export class Dashboard extends React.Component {
     render() {
         return (
             <div className="dashboard">
-                <div className="dashboard-name">Welcome, {this.props.name}!</div>
+                {/* <div className="dashboard-name">Welcome, {this.props.name}!</div> */}
             </div>
         );
     }
