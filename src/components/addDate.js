@@ -1,7 +1,7 @@
 import React from 'react';
 
-export default function AddDate(props) {
+export default function FindDate(props) {
     return (
-        <button type="button" className="btn btn-primary">Schedule Date</button>
+        <button className="btn btn-primary">Schedule</button>
     );
 }
