@@ -1,4 +1,6 @@
 import React from 'react';
+import AddDate from './addDate';
+import FindDate from './findDate';
 import {connect} from 'react-redux';
 import {clearAuth} from '../actions/auth';
 import {clearAuthToken} from '../local-storage';
@@ -12,18 +14,34 @@ export class HeaderBar extends React.Component {
 
     render() {
         let logOutButton;
+        let addDate;
+        let findDate;
         if (this.props.loggedIn) {
             logOutButton = (
-                <button className="btn" onClick={() => this.logOut()}>Log out</button>
+                <button className="btn-dark" onClick={() => this.logOut()}>Log out</button>
+            );
+            addDate = (
+                <AddDate />
+            );
+            findDate = (
+                <FindDate />
             );
         }
         return (
-            <header className="masthead mb-auto text-center header-bar">
-                <div className="inner">
-                    <h1>DogDates</h1>
-                </div>
-                {logOutButton}
-            </header>
+            <nav className="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
+                <a className="navbar-brand" href="#">DogDates</a>
+                <ul className="navbar-nav">
+                    <li className="nav-item">
+                        {findDate}
+                    </li>
+                    <li className="nav-item">
+                        {addDate}
+                    </li>
+                    <li className="nav-item">
+                        {logOutButton}
+                    </li>
+                </ul>
+            </nav>
         );
     }
 }
