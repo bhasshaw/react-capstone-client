@@ -2,6 +2,6 @@ import React from 'react';
 
 export default function FindDate(props) {
     return (
-        <button className="btn-dark">Find</button>
+        <a className="nav-link" href="#">Find Date</a>
     );
 }

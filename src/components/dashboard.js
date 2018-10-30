@@ -1,5 +1,5 @@
 import React from 'react';
-import MapContainer from './google';
+// import MapContainer from './google';
 import {connect} from 'react-redux';
 import requiresLogin from './requires-login';
 
@@ -8,7 +8,7 @@ export class Dashboard extends React.Component {
         return (
             <div className="dashboard">
                 {/* <div className="dashboard-name">Welcome, {this.props.name}!</div> */}
-                <MapContainer />
+                {/* <MapContainer /> */}
             </div>
         );
     }

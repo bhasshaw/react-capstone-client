@@ -3,6 +3,6 @@ import React from 'react';
 
 export default function FindDate(props) {
     return (
-        <button className="btn-dark">Create</button>
+        <a className="nav-link" href="#">Create Date</a>
     );
 }

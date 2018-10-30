@@ -9,9 +9,8 @@ import Dashboard from './dashboard';
 import RegistrationPage from './registration-page';
 // import AddDatePage from './add-date-page';
 import {refreshAuthToken} from '../actions/auth';
-require('dotenv').config()
-// const API_KEY = `${process.env.REACT_APP_GOOGLE_API_KEY}`
-// console.log("API", API_KEY)
+
+
 
 export class App extends React.Component {
     componentDidUpdate(prevProps) {

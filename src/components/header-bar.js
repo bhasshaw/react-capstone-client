@@ -1,6 +1,6 @@
 import React from 'react';
 import AddDate from './add-date-btn';
-import FindDate from './find-date';
+import FindDate from './find-date-btn';
 import {connect} from 'react-redux';
 import {clearAuth} from '../actions/auth';
 import {clearAuthToken} from '../local-storage';
@@ -18,7 +18,7 @@ export class HeaderBar extends React.Component {
         let findDate;
         if (this.props.loggedIn) {
             logOut = (
-                <button className="btn-dark" onClick={() => this.logOut()}>Log Out</button>
+                <a href="#" className="nav-link" onClick={() => this.logOut()}>Log Out</a>
             );
             addDate = (
                 <AddDate />
@@ -28,19 +28,24 @@ export class HeaderBar extends React.Component {
             );
         }
         return (
-            <nav className="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
+            <nav className="navbar navbar-dark bg-dark">
                 <a className="navbar-brand" href="#">DogDates</a>
-                <ul className="navbar-nav">
-                    <li className="nav-item">
-                        {findDate}
-                    </li>
-                    <li className="nav-item">
-                        {addDate}
-                    </li>
-                    <li className="float-right nav-item">
-                        {logOut}
-                    </li>
-                </ul>
+                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon"></span>
+                </button>
+                <div className="collapse navbar-collapse" id="navbarsExample01">
+                    <ul className="navbar-nav mr-auto">
+                        <li className="nav-item">
+                            {findDate}
+                        </li>
+                        <li className="nav-item">
+                            {addDate}
+                        </li>
+                        <li className="nav-item">
+                            {logOut}
+                        </li>
+                    </ul>
+                </div>
             </nav>
         );
     }
