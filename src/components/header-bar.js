@@ -13,12 +13,12 @@ export class HeaderBar extends React.Component {
     }
 
     render() {
-        let logOutButton;
+        let logOut;
         let addDate;
         let findDate;
         if (this.props.loggedIn) {
-            logOutButton = (
-                <button className="btn-dark" onClick={() => this.logOut()}>Log out</button>
+            logOut = (
+                <button className="btn-dark" onClick={() => this.logOut()}>Log Out</button>
             );
             addDate = (
                 <AddDate />
@@ -37,8 +37,8 @@ export class HeaderBar extends React.Component {
                     <li className="nav-item">
                         {addDate}
                     </li>
-                    <li className="nav-item">
-                        {logOutButton}
+                    <li className="float-right nav-item">
+                        {logOut}
                     </li>
                 </ul>
             </nav>
