@@ -5,9 +5,9 @@ import {Route, withRouter} from 'react-router-dom';
 import HeaderBar from './header-bar';
 import LandingPage from './landing-page';
 import Footer from './footer';
+import Main from './main';
 import Dashboard from './dashboard';
 import RegistrationPage from './registration-page';
-// import AddDatePage from './add-date-page';
 import {refreshAuthToken} from '../actions/auth';
 
 
@@ -44,12 +44,12 @@ export class App extends React.Component {
 
     render() {
         return (
-            <div className="app cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+            <div className="cover-container d-flex h-100 p-3 mx-auto flex-column">
                 <HeaderBar />
+                <Main />
                 <Route exact path="/" component={LandingPage} />
                 <Route exact path="/dashboard" component={Dashboard} />
                 <Route exact path="/register" component={RegistrationPage} />
-                {/* <Route exact path="/create" component={AddDatePage} /> */}
                 <Footer />
             </div>
         );

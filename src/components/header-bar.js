@@ -4,7 +4,6 @@ import FindDate from './find-date-btn';
 import {connect} from 'react-redux';
 import {clearAuth} from '../actions/auth';
 import {clearAuthToken} from '../local-storage';
-import './header-bar.css';
 
 export class HeaderBar extends React.Component {
     logOut() {
@@ -28,7 +27,7 @@ export class HeaderBar extends React.Component {
             );
         }
         return (
-            <nav className="navbar navbar-dark bg-dark">
+            <nav className="navbar navbar-dark bg-dark masthead mb-auto">
                 <a className="navbar-brand" href="#">DogDates</a>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
