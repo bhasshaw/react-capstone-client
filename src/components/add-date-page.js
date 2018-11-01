@@ -1,13 +1,23 @@
 import React from 'react';
-// import {connect} from 'react-redux';
-import AddDateForm from 'add-date-form';
+import {connect} from 'react-redux';
+// import {Redirect} from 'react-router-dom';
+import AddDateForm from './add-date-form';
 
-export default function AddDatePage () {
+export function AddDatePage(props) {
+    // If we are logged in (which happens automatically when registration
+    // is successful) redirect to the user's dashboard
+    // if (props.loggedIn) {
+    //     return <Redirect to="/dashboard" />;
+    // }
     return (
-        <div className="text-center">
-            <AddDateForm />
+        <div className="text-center home">
+            <AddDateForm  />
         </div>
     );
 }
 
-// export default (AddDatePage);
+const mapStateToProps = state => ({
+    loggedIn: state.auth.currentUser !== null
+});
+
+export default connect(mapStateToProps)(AddDatePage);

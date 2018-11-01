@@ -1,8 +1,8 @@
 import React from 'react';
-// import {Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
-export default function FindDate(props) {
+export default function AddDate(props) {
     return (
-        <a className="nav-link" href="#">Schedule</a>
+        <Link to="/add"><span className="nav-link">Schedule</span></Link>
     );
-}
+};
