@@ -15,7 +15,7 @@ export const postDateError = error => ({
 
 export const postDate = (date) => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
-    return fetch(`${API_BASE_URL}/date`, {
+    return fetch(`${API_BASE_URL}/dates/date`, {
         method: 'POST',
         headers: {
             // Provide our auth token as credentials
