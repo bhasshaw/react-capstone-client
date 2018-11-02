@@ -1,53 +1,13 @@
 import React from 'react';
-import {Field, reduxForm,SubmissionError, focus} from 'redux-form';
+import {connect} from 'react-redux';
+import {Field, reduxForm, focus} from 'redux-form';
 import {required, nonEmpty} from '../validators';
 import Input from './input';
+import {postDate} from '../actions/protected-data';
 
 export class AddDateForm extends React.Component {
     onSubmit(values) {
-        return fetch('/api/dates/date', {
-            method: 'POST',
-            body: JSON.stringify(values),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
-            .then(res => {
-                if (!res.ok) {
-                    if (
-                        res.headers.has('content-type') &&
-                        res.headers
-                            .get('content-type')
-                            .startsWith('application/json')
-                    ) {
-                        // It's a nice JSON error returned by us, so decode it
-                        return res.json().then(err => Promise.reject(err));
-                    }
-                    // It's a less informative error returned by express
-                    return Promise.reject({
-                        code: res.status,
-                        message: res.statusText
-                    });
-                }
-                return;
-            })
-            .then(() => console.log('Submitted with values', values))
-            .catch(err => {
-                const {reason, message, location} = err;
-                if (reason === 'ValidationError') {
-                    // Convert ValidationErrors into SubmissionErrors for Redux Form
-                    return Promise.reject(
-                        new SubmissionError({
-                            [location]: message
-                        })
-                    );
-                }
-                return Promise.reject(  
-                    new SubmissionError({
-                        _error: 'Error submitting message'
-                    })
-                );
-            });
+        this.props.dispatch(postDate(values))
     }
     render() {
         return (
@@ -96,7 +56,7 @@ export class AddDateForm extends React.Component {
                 />
                 <button 
                     className="btn btn-primary" 
-                    type="button submit" 
+                    type="submit" 
                     disabled={this.props.pristine || this.props.submitting}>
                     Submit
                 </button>
@@ -106,6 +66,7 @@ export class AddDateForm extends React.Component {
 }
 
 export default reduxForm({
-    form: 'adddate',
-    onSubmitFail: (errors, dispatch) => dispatch(focus('add'))
-})(AddDateForm);
+    form: 'add',
+    onSubmitFail: (errors, dispatch) =>
+        dispatch(focus('contact', Object.keys(errors)[0]))
+})(connect()(AddDateForm));

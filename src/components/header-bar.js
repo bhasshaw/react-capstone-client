@@ -29,7 +29,7 @@ export class HeaderBar extends React.Component {
         }
         return (
             <nav className="navbar navbar-dark bg-dark masthead mb-auto">
-                <a className="navbar-brand" href="#">DogDates</a>
+                <a className="navbar-brand" href="/dashboard">DogDates</a>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -42,7 +42,7 @@ export class HeaderBar extends React.Component {
                             {addDate}
                         </li>
                         <li className="About">
-                            <Link className="nav-link" to="">About</Link>
+                            <Link className="nav-link" to="/about">About</Link>
                         </li>
                         <li className="nav-item">
                             {logOut}

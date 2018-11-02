@@ -1,31 +1,33 @@
 import {API_BASE_URL} from '../config';
 import {normalizeResponseErrors} from './utils';
 
-export const FETCH_PROTECTED_DATA_SUCCESS = 'FETCH_PROTECTED_DATA_SUCCESS';
-export const fetchProtectedDataSuccess = data => ({
-    type: FETCH_PROTECTED_DATA_SUCCESS,
+export const POST_DATE_SUCCESS = 'POST_DATE_SUCCESS';
+export const postDateSuccess = data => ({
+    type: POST_DATE_SUCCESS,
     data
 });
 
-export const FETCH_PROTECTED_DATA_ERROR = 'FETCH_PROTECTED_DATA_ERROR';
-export const fetchProtectedDataError = error => ({
-    type: FETCH_PROTECTED_DATA_ERROR,
+export const POST_DATE_ERROR = 'POST_DATE_ERROR';
+export const postDateError = error => ({
+    type: POST_DATE_ERROR,
     error
 });
 
-export const fetchProtectedData = () => (dispatch, getState) => {
+export const postDate = (date) => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
-    return fetch(`${API_BASE_URL}/protected`, {
-        method: 'GET',
+    return fetch(`${API_BASE_URL}/date`, {
+        method: 'POST',
         headers: {
             // Provide our auth token as credentials
-            Authorization: `Bearer ${authToken}`
-        }
+            Authorization: `Bearer ${authToken}`,
+            "Content-type": "application/json"
+        },
+        body: JSON.stringify(date)
     })
         .then(res => normalizeResponseErrors(res))
         .then(res => res.json())
-        .then(({data}) => dispatch(fetchProtectedDataSuccess(data)))
+        .then(data => dispatch(postDateSuccess(data)))
         .catch(err => {
-            dispatch(fetchProtectedDataError(err));
+            dispatch(postDateError(err));
         });
 };
