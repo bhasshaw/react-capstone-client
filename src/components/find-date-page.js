@@ -5,10 +5,10 @@ import {getDate} from '../actions/protected-data';
 
 export class FindDatePage extends React.Component {
     componentWillMount() {
-		this.props.dispatch(getDate(this.props.user));
+		this.props.dispatch(getDate(this.props.data));
 	}
     render() {
-        
+        console.log(this.props.data);
         return (
             <div className="text-center home">
                 <h1>Hello</h1>

@@ -6,7 +6,15 @@ import {
 } from '../actions/protected-data';
 
 const initialState = {
-    data: {},
+    data: {
+        id: null,
+		street: null,
+		city: null,
+		state: null,
+		zip: null,
+		date: null,
+		time: null
+    },
     error: null
 };
 
