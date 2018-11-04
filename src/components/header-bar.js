@@ -4,7 +4,7 @@ import FindDate from './find-date-btn';
 import {connect} from 'react-redux';
 import {clearAuth} from '../actions/auth';
 import {clearAuthToken} from '../local-storage';
-import {Link} from 'react-router-dom';
+// import {Link} from 'react-router-dom';
 
 export class HeaderBar extends React.Component {
     logOut() {
@@ -18,7 +18,7 @@ export class HeaderBar extends React.Component {
         let findDate;
         if (this.props.loggedIn) {
             logOut = (
-                <a href="#" className="nav-link" onClick={() => this.logOut()}>Log Out</a>
+                <a href="./dashboard" className="nav-link" onClick={() => this.logOut()}>Log Out</a>
             );
             addDate = (
                 <AddDate />
@@ -27,13 +27,14 @@ export class HeaderBar extends React.Component {
                 <FindDate />
             );
         }
+        
         return (
             <nav className="navbar navbar-dark bg-dark masthead mb-auto">
                 <a className="navbar-brand" href="/dashboard">DogDates</a>
-                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
+                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
-                <div className="collapse navbar-collapse" id="navbarsExample01">
+                <div className="collapse navbar-collapse dropdown" id="navbar">
                     <ul className="navbar-nav mr-auto">
                         <li className="nav-item">
                             {findDate}
@@ -41,9 +42,9 @@ export class HeaderBar extends React.Component {
                         <li className="nav-item">
                             {addDate}
                         </li>
-                        <li className="About">
+                        {/* <li className="About">
                             <Link className="nav-link" to="/about">About</Link>
-                        </li>
+                        </li> */}
                         <li className="nav-item">
                             {logOut}
                         </li>

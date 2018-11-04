@@ -1,18 +1,20 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import {getDate} from '../actions/protected-data';
 // import {Redirect} from 'react-router-dom';
 
-export function FindDatePage(props) {
-    // If we are logged in (which happens automatically when registration
-    // is successful) redirect to the user's dashboard
-    // if (props.loggedIn) {
-    //     return <Redirect to="/dashboard" />;
-    // }
-    return (
-        <div className="text-center home">
-            <h1>Hello</h1>
-        </div>
-    );
+export class FindDatePage extends React.Component {
+    componentWillMount() {
+		this.props.dispatch(getDate(this.props.user));
+	}
+    render() {
+        
+        return (
+            <div className="text-center home">
+                <h1>Hello</h1>
+            </div>
+        )
+    }   
 }
 
 const mapStateToProps = state => ({

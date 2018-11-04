@@ -11,9 +11,9 @@ export class AddDateForm extends React.Component {
     }
     render() {
         return (
-            <form className="add-date-form" onSubmit={this.props.handleSubmit(values =>this.onSubmit(values))}>
+            <form className="my-3 add-date-form" onSubmit={this.props.handleSubmit(values =>this.onSubmit(values))}>
                 <label htmlFor="street">Street</label>
-                <Field 
+                <Field
                     component={Input} 
                     type="text" 
                     name="street" 
@@ -55,7 +55,7 @@ export class AddDateForm extends React.Component {
                     validate={[required, nonEmpty]}
                 />
                 <button 
-                    className="btn btn-primary" 
+                    className="mt-2 btn btn-primary" 
                     type="submit" 
                     disabled={this.props.pristine || this.props.submitting}>
                     Submit

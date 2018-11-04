@@ -1,6 +1,8 @@
 import {
     POST_DATE_SUCCESS,
-    POST_DATE_ERROR
+    POST_DATE_ERROR,
+    GET_DATE_SUCCESS,
+    GET_DATE_ERROR
 } from '../actions/protected-data';
 
 const initialState = {
@@ -9,12 +11,12 @@ const initialState = {
 };
 
 export default function reducer(state = initialState, action) {
-    if (action.type === POST_DATE_SUCCESS) {
+    if (action.type === POST_DATE_SUCCESS || GET_DATE_SUCCESS) {
         return Object.assign({}, state, {
             data: action.data,
             error: null
         });
-    } else if (action.type === POST_DATE_ERROR) {
+    } else if (action.type === POST_DATE_ERROR || GET_DATE_ERROR) {
         return Object.assign({}, state, {
             error: action.error
         });

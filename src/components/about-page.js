@@ -1,11 +1,15 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import requiresLogin from './requires-login';
+// import {Redirect} from 'react-router-dom';
 
-export class Dashboard extends React.Component {
-    render() {
-        return (
-        <div className="dashboard position-relative overflow-hidden p-4 p-md-5 my-2 text-center bg-dark h-100">
+export function AboutPage(props) {
+    // If we are logged in (which happens automatically when registration
+    // is successful) redirect to the user's dashboard
+    // if (props.loggedIn) {
+    //     return <Redirect to="/dashboard" />;
+    // }
+    return (
+        <div className="text-center pt-3 container">
             <div className="row">
                 <div className="col-lg-4">
                     <img className="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder" width="140" height="140"></img>
@@ -24,16 +28,11 @@ export class Dashboard extends React.Component {
                 </div>
             </div>
         </div>
-        );
-    }
+    );
 }
 
-const mapStateToProps = state => {
-    const {currentUser} = state.auth;
-    return {
-        name: `${currentUser.firstName}`,
-        loggedIn: state.auth.currentUser !== null
-    };
-};
+const mapStateToProps = state => ({
+    loggedIn: state.auth.currentUser !== null
+});
 
-export default requiresLogin()(connect(mapStateToProps)(Dashboard));
+export default connect(mapStateToProps)(AboutPage);

@@ -13,12 +13,23 @@ export const postDateError = error => ({
     error
 });
 
+export const GET_DATE_SUCCESS = 'GET_DATE_SUCCESS';
+export const getDateSuccess = data => ({
+    type: GET_DATE_SUCCESS,
+    data
+});
+
+export const GET_DATE_ERROR = 'GET_DATE_ERROR';
+export const getDateError = error => ({
+    type: GET_DATE_ERROR,
+    error
+});
+
 export const postDate = (date) => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
     return fetch(`${API_BASE_URL}/dates/date`, {
         method: 'POST',
         headers: {
-            // Provide our auth token as credentials
             Authorization: `Bearer ${authToken}`,
             "Content-type": "application/json"
         },
@@ -39,6 +50,11 @@ export const getDate = () => (dispatch, getState) => {
         headers: {
             Authorization: `Bearer ${authToken}`
         },
-        success: console.log('GET success')
     })
+    .then(res => normalizeResponseErrors(res))
+    .then(res => res.json())
+    .then(({data}) => dispatch(getDateSuccess(data)))
+    .catch(err => {
+        dispatch(getDateError(err));
+    });
 };
