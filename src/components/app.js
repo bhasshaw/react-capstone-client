@@ -8,6 +8,7 @@ import Footer from './footer';
 import Dashboard from './dashboard';
 import RegistrationPage from './registration-page';
 import AddDatePage from './add-date-page';
+import FindDatePage from './find-date-page';
 import {refreshAuthToken} from '../actions/auth';
 
 
@@ -51,6 +52,7 @@ export class App extends React.Component {
                     <Route exact path="/dashboard" component={Dashboard} />
                     <Route exact path="/register" component={RegistrationPage} />
                     <Route exact path="/add" component={AddDatePage} />
+                    <Route exact path="/find" component={FindDatePage} />
                 </Switch>
                 <Footer />
             </div>

@@ -31,3 +31,14 @@ export const postDate = (date) => (dispatch, getState) => {
             dispatch(postDateError(err));
         });
 };
+
+export const getDate = () => (dispatch, getState) => {
+    const authToken = getState().auth.authToken;
+    return fetch (`${API_BASE_URL}/dates/date`, {
+        method: 'GET',
+        headers: {
+            Authorization: `Bearer ${authToken}`
+        },
+        success: console.log('GET success')
+    })
+};
