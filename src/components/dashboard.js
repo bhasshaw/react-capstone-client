@@ -1,6 +1,9 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import requiresLogin from './requires-login';
+import magnify from '../views/magnify.png';
+import calendar from '../views/calendar.png';
+import check from '../views/check.png';
 
 export class Dashboard extends React.Component {
     render() {
@@ -8,19 +11,19 @@ export class Dashboard extends React.Component {
         <div className="dashboard position-relative overflow-hidden p-4 p-md-5 my-2 text-center bg-dark h-100">
             <div className="row">
                 <div className="col-lg-4">
-                    <img className="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder" width="140" height="140"></img>
-                    <h2>Schedule</h2>
-                    <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+                    <img className="rounded-circle" src={calendar} alt="Generic placeholder" width="140" height="140"></img>
+                    <h2 className="pt-3">Schedule</h2>
+                    <p>With DogDates you can schedule your own play date! Easily enter the date, time, and address you will be playing with your dog and let other dogs join while you're there!</p>
                 </div>
                 <div className="col-lg-4">
-                    <img className="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder" width="140" height="140"></img>
-                    <h2>Find</h2>
-                    <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+                    <img className="rounded-circle" src={magnify} alt="Generic placeholder" width="140" height="140"></img>
+                    <h2 className="pt-3">Find</h2>
+                    <p>You can also search for play dates in your area! Look at what others have scheduled and meet up with them at your convenience!</p>
                 </div>
                 <div className="col-lg-4">
-                    <img className="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder" width="140" height="140"></img>
-                    <h2>Meet Dogs</h2>
-                    <p>Donec sed odio dui. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+                    <img className="rounded-circle" src={check} alt="Generic placeholder" width="140" height="140"></img>
+                    <h2 className="pt-3">Meet Dogs</h2>
+                    <p>Whether you schedule your own play date or join others, your dog will have a great time meeting new friends!</p>
                 </div>
             </div>
         </div>
