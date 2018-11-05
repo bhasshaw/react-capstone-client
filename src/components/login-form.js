@@ -5,6 +5,8 @@ import Input from './input';
 import {login} from '../actions/auth';
 import {required, nonEmpty} from '../validators';
 import {Link} from 'react-router-dom';
+// import styled from 'styled-components';
+// import './main.css';
 
 
 export class LoginForm extends React.Component {
@@ -21,9 +23,10 @@ export class LoginForm extends React.Component {
                 </div>
             );
         }
+        
         return (
             <form
-                className="my-3 login-form p-3 text-center"
+                className="my-3 login-form p-3 text-center bg-dark"
                 onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values)
                 )}>
@@ -47,10 +50,10 @@ export class LoginForm extends React.Component {
                     id="password"
                     validate={[required, nonEmpty]}
                 />
-                <button type="submit" className="mt-2 mx-auto btn-sm btn-primary" disabled={this.props.pristine || this.props.submitting}>
+                <button type="submit" className="mt-2 mx-auto btn-sm btn-primary btn-block" disabled={this.props.pristine || this.props.submitting}>
                     Log in
                 </button>
-                <Link to="/register"><button className="mt-2 mx-auto btn-sm btn-primary">Register</button></Link>
+                <Link to="/register"><button className="mt-2 mx-auto btn-sm btn-primary btn-block">Register</button></Link>
             </form>
         );
     }
