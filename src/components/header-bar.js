@@ -4,7 +4,6 @@ import FindDate from './find-date-btn';
 import {connect} from 'react-redux';
 import {clearAuth} from '../actions/auth';
 import {clearAuthToken} from '../local-storage';
-// import {Link} from 'react-router-dom';
 
 export class HeaderBar extends React.Component {
     logOut() {
@@ -42,9 +41,6 @@ export class HeaderBar extends React.Component {
                         <li className="nav-item">
                             {addDate}
                         </li>
-                        {/* <li className="About">
-                            <Link className="nav-link" to="/about">About</Link>
-                        </li> */}
                         <li className="nav-item">
                             {logOut}
                         </li>

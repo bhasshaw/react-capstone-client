@@ -31,7 +31,7 @@ export class LoginForm extends React.Component {
                     this.onSubmit(values)
                 )}>
                 {error}
-                <h1 className="h3 mb-3 font-weight-normal">Please sign in</h1>
+                {/* <h1 className="h3 mb-3 font-weight-normal">Please sign in</h1> */}
                 <div className="form-group">
                 <label htmlFor="username">Username</label>
                 <Field
@@ -50,10 +50,10 @@ export class LoginForm extends React.Component {
                     id="password"
                     validate={[required, nonEmpty]}
                 />
-                <button type="submit" className="mt-2 mx-auto btn-sm btn-primary" disabled={this.props.pristine || this.props.submitting}>
-                    Log In
+                <button type="submit" className="button mt-2 mx-auto btn-sm btn-primary btn-block" disabled={this.props.pristine || this.props.submitting}>
+                    Sign In
                 </button>
-                <Link to="/register"><button className="mt-2 mx-auto btn-sm btn-primary">Enroll</button></Link>
+                <Link to="/register"><button className="button mt-2 mx-auto btn-sm btn-primary btn-block">Register</button></Link>
             </form>
         );
     }

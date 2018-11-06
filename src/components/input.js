@@ -33,7 +33,7 @@ export default class Input extends React.Component {
                     id={this.props.input.name}
                     type={this.props.type}
                     ref={input => (this.input = input)}
-                    className="special"
+                    className="mb-2 input bg-dark text-center"
                 />
             </div>
         );
