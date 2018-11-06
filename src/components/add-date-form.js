@@ -4,10 +4,12 @@ import {Field, reduxForm, focus} from 'redux-form';
 import {required, nonEmpty} from '../validators';
 import Input from './input';
 import {postDate} from '../actions/protected-data';
+import {withRouter} from 'react-router-dom';
 
 export class AddDateForm extends React.Component {
     onSubmit(values) {
-        this.props.dispatch(postDate(values))
+        this.props.dispatch(postDate(values));
+        this.props.history.push("/dashboard");
     }
     render() {
         return (
@@ -69,4 +71,4 @@ export default reduxForm({
     form: 'add',
     onSubmitFail: (errors, dispatch) =>
         dispatch(focus('contact', Object.keys(errors)[0]))
-})(connect()(AddDateForm));
+})(withRouter(connect()(AddDateForm)));
