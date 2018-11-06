@@ -5,7 +5,7 @@ import AddDateForm from './add-date-form';
 export function AddDatePage(props) {
    
     return (
-        <div className="text-center home">
+        <div className="text-center home bg-dark my-2 p-3">
             <AddDateForm  />
         </div>
     );

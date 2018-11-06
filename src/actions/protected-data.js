@@ -13,15 +13,15 @@ export const postDateError = error => ({
     error
 });
 
-export const GET_DATE_SUCCESS = 'GET_DATE_SUCCESS';
+export const GET_DATES_SUCCESS = 'GET_DATES_SUCCESS';
 export const getDateSuccess = data => ({
-    type: GET_DATE_SUCCESS,
+    type: GET_DATES_SUCCESS,
     data
 });
 
-export const GET_DATE_ERROR = 'GET_DATE_ERROR';
+export const GET_DATES_ERROR = 'GET_DATES_ERROR';
 export const getDateError = error => ({
-    type: GET_DATE_ERROR,
+    type: GET_DATES_ERROR,
     error
 });
 
@@ -43,7 +43,7 @@ export const postDate = (date) => (dispatch, getState) => {
         });
 };
 
-export const getDate = () => (dispatch, getState) => {
+export const getDates = () => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
     return fetch (`${API_BASE_URL}/dates/date`, {
         method: 'GET',
@@ -53,7 +53,7 @@ export const getDate = () => (dispatch, getState) => {
     })
     .then(res => normalizeResponseErrors(res))
     .then(res => res.json())
-    .then(({data}) => dispatch(getDateSuccess(data)))
+    .then((data) => dispatch(getDateSuccess(data)))
     .catch(err => {
         dispatch(getDateError(err));
     });
