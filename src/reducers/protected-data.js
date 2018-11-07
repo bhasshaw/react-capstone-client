@@ -9,12 +9,10 @@ const initialState = {
     dates: [],
     date: {
         id: null,
-		street: null,
-		city: null,
-		state: null,
-		zip: null,
+		park: null,
 		date: null,
-		time: null
+        startTime: null,
+        endTime: null
     },
     error: null
 };

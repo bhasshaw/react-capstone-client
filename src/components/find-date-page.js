@@ -9,13 +9,13 @@ export class FindDatePage extends React.Component {
 	}
     render() {
         let dates = this.props.dates.map(date =>
-        <div> 
-            <div>{date.street}</div>
-            <div>{date.city} {date.state} {date.zip}</div>
-        <div>{date.time}</div>
+        <div className=""> 
+            <div>{date.park}</div>
+            <div>{date.date}</div>
+            <div>{date.startTime} to {date.endTime}</div>
         </div>)
         return (
-            <div className="text-center bg-dark my-2 p-3 home">
+            <div className="text-center bg-dark my-2 p-3">
                 <h3>Results</h3>
                 {dates}
             </div>

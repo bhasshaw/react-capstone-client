@@ -14,32 +14,11 @@ export class AddDateForm extends React.Component {
     render() {
         return (
             <form className="my-3 add-date-form" onSubmit={this.props.handleSubmit(values =>this.onSubmit(values))}>
-                <label htmlFor="street">Street</label>
+                <label htmlFor="park">Park Name</label>
                 <Field
                     component={Input} 
                     type="text" 
-                    name="street" 
-                    validate={[required, nonEmpty]}
-                />
-                <label htmlFor="city">City</label>
-                <Field 
-                    component={Input} 
-                    type="text" 
-                    name="city" 
-                    validate={[required, nonEmpty]}
-                />
-                <label htmlFor="state">State</label>
-                <Field 
-                    component={Input} 
-                    type="text" 
-                    name="state"
-                    validate={[required, nonEmpty]}
-                />
-                <label htmlFor="zip">Zip</label>
-                <Field 
-                    component={Input} 
-                    type="text" 
-                    name="zip" 
+                    name="park" 
                     validate={[required, nonEmpty]}
                 />
                 <label htmlFor="date">Date</label>
@@ -49,11 +28,18 @@ export class AddDateForm extends React.Component {
                     name="date" 
                     validate={[required, nonEmpty]}
                 />
-                <label htmlFor="time">Time</label>
+                <label htmlFor="startTime">Start Time</label>
                 <Field 
                     component={Input} 
                     type="text" 
-                    name="time"
+                    name="startTime"
+                    validate={[required, nonEmpty]}
+                />
+                <label htmlFor="endTime">End Time</label>
+                <Field 
+                    component={Input} 
+                    type="text" 
+                    name="endTime" 
                     validate={[required, nonEmpty]}
                 />
                 <button 
