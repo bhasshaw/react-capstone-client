@@ -9,7 +9,7 @@ import Dashboard from './dashboard';
 import RegistrationPage from './registration-page';
 import AddDatePage from './add-date-page';
 import FindDatePage from './find-date-page';
-// import AboutPage from './about-page';
+import MyDogDatesPage from './my-dates-page';
 import {refreshAuthToken} from '../actions/auth';
 
 
@@ -54,7 +54,7 @@ export class App extends React.Component {
                     <Route exact path="/register" component={RegistrationPage} />
                     <Route exact path="/add" component={AddDatePage} />
                     <Route exact path="/find" component={FindDatePage} />
-                    {/* <Route exact path="/about" component={AboutPage} /> */}
+                    <Route exact path="/mydogdates" component={MyDogDatesPage} />
                 </Switch>
                 <Footer />
             </div>

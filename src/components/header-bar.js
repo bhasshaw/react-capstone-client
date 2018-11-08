@@ -1,6 +1,7 @@
 import React from 'react';
 import AddDate from './add-date-btn';
 import FindDate from './find-date-btn';
+import MyDogDates from './my-dates-btn';
 import {connect} from 'react-redux';
 import {clearAuth} from '../actions/auth';
 import {clearAuthToken} from '../local-storage';
@@ -15,6 +16,7 @@ export class HeaderBar extends React.Component {
         let logOut;
         let addDate;
         let findDate;
+        let myDates;
         if (this.props.loggedIn) {
             logOut = (
                 <a href="./dashboard" className="nav-link" onClick={() => this.logOut()}>Log Out</a>
@@ -24,6 +26,9 @@ export class HeaderBar extends React.Component {
             );
             findDate = (
                 <FindDate />
+            );
+            myDates = (
+                <MyDogDates />
             );
         }
         
@@ -40,6 +45,9 @@ export class HeaderBar extends React.Component {
                         </li>
                         <li className="nav-item">
                             {addDate}
+                        </li>
+                        <li className="nav-item">
+                            {myDates}
                         </li>
                         <li className="nav-item">
                             {logOut}
