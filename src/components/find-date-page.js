@@ -8,16 +8,22 @@ export class FindDatePage extends React.Component {
 		this.props.dispatch(getDates());
 	}
     render() {
-        let dates = this.props.dates.map(date =>
-        <div className=""> 
-            <div>{date.park}</div>
-            <div>{date.date}</div>
-            <div>{date.startTime} to {date.endTime}</div>
+        let dates = this.props.dates.map((date, i) =>
+        <div className="card box-shadow mb-3" key={i}> 
+            <div className="card-header">
+                <h4>{date.park}</h4>
+            </div>
+            <div className="card-body">
+                <h5 className="mb-3">{date.date}</h5>
+                <h6 className="">{date.startTime} to {date.endTime}</h6>
+            </div>
+            <button type="button" className="btn btn-sm btn-primary mb-3 mx-3">RSVP</button>
         </div>)
         return (
-            <div className="text-center bg-dark my-2 p-3">
-                <h3>Results</h3>
-                {dates}
+            <div className="text-center text-dark bg-dark my-2 p-3">
+                <div className="card-deck">
+                    {dates}
+                </div>
             </div>
         )
     }   

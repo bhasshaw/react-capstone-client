@@ -25,6 +25,18 @@ export const getDateError = error => ({
     error
 });
 
+export const DELETE_DATE_SUCCESS = 'DELETE_DATE_SUCCESS';
+export const deleteDateSuccess = data => ({
+    type: DELETE_DATE_SUCCESS,
+    data
+});
+
+export const DELETE_DATE_ERROR = 'DELETE_DATE_ERROR';
+export const deleteDateError = error => ({
+    type: DELETE_DATE_ERROR,
+    error
+});
+
 export const postDate = (date) => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
     return fetch(`${API_BASE_URL}/dates/date`, {
@@ -35,12 +47,12 @@ export const postDate = (date) => (dispatch, getState) => {
         },
         body: JSON.stringify(date)
     })
-        .then(res => normalizeResponseErrors(res))
-        .then(res => res.json())
-        .then(data => dispatch(postDateSuccess(data)))
-        .catch(err => {
-            dispatch(postDateError(err));
-        });
+    .then(res => normalizeResponseErrors(res))
+    .then(res => res.json())
+    .then(data => dispatch(postDateSuccess(data)))
+    .catch(err => {
+        dispatch(postDateError(err));
+    });
 };
 
 export const getDates = () => (dispatch, getState) => {
@@ -49,7 +61,7 @@ export const getDates = () => (dispatch, getState) => {
         method: 'GET',
         headers: {
             Authorization: `Bearer ${authToken}`
-        },
+        }
     })
     .then(res => normalizeResponseErrors(res))
     .then(res => res.json())
@@ -58,3 +70,19 @@ export const getDates = () => (dispatch, getState) => {
         dispatch(getDateError(err));
     });
 };
+
+export const deleteDate = (id) => (dispatch, getState) => {
+    const authToken = getState().auth.authToken;
+    return fetch (`${API_BASE_URL}/dates/date/${id}`, {
+        method: 'DELETE',
+        headers: {
+            Authorization: `Bearer ${authToken}`
+        }
+    })
+    .then(res => normalizeResponseErrors(res))
+    .then(res => res.json())
+    .then((data) => dispatch(deleteDateSuccess(data)))
+    .catch(err => {
+        dispatch(deleteDateError(err));
+    });
+}
