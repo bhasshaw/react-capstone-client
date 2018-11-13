@@ -1,13 +1,13 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {getDates} from '../actions/protected-data';
+import {getMyDates} from '../actions/protected-data';
 import {deleteDate} from '../actions/protected-data';
 import './main.css';
 // import {Redirect} from 'react-router-dom';
 
 export class MyDogDatesPage extends React.Component {
     componentWillMount() {
-		this.props.dispatch(getDates());
+		this.props.dispatch(getMyDates());
     }
     handleDelete(id) {
         this.props.dispatch(deleteDate(id))

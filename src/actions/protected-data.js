@@ -66,8 +66,8 @@ export const getDates = () => (dispatch, getState) => {
     });
 };
 
-export const getMyDates = (user) => (dispatch, getState) => {
-    // const user = getState().auth.currentUser.username;
+export const getMyDates = () => (dispatch, getState) => {
+    const user = getState().auth.currentUser.username;
     const authToken = getState().auth.authToken;
     return fetch (`${API_BASE_URL}/dates/date/${user}`, {
         method: 'GET',
@@ -87,6 +87,7 @@ export const getMyDates = (user) => (dispatch, getState) => {
 export const postDate = (date) => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
     const user = getState().auth.currentUser.username;
+    console.log(user);
     return fetch(`${API_BASE_URL}/dates/date`, {
         method: 'POST',
         headers: {
@@ -97,7 +98,7 @@ export const postDate = (date) => (dispatch, getState) => {
     })
     .then(res => normalizeResponseErrors(res))
     .then(res => res.json())
-    .then(data => dispatch(postDateSuccess(user, data)))
+    .then(data => dispatch(postDateSuccess(user)))
     .catch(err => {
         dispatch(postDateError(err));
     });
