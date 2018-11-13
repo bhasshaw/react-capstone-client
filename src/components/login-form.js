@@ -5,9 +5,6 @@ import Input from './input';
 import {login} from '../actions/auth';
 import {required, nonEmpty} from '../validators';
 import {Link} from 'react-router-dom';
-// import styled from 'styled-components';
-// import './main.css';
-
 
 export class LoginForm extends React.Component {
     onSubmit(values) {

@@ -11,8 +11,7 @@ import AddDatePage from './add-date-page';
 import FindDatePage from './find-date-page';
 import MyDogDatesPage from './my-dates-page';
 import {refreshAuthToken} from '../actions/auth';
-
-
+import './custom.scss';
 
 export class App extends React.Component {
     componentDidUpdate(prevProps) {
@@ -46,7 +45,7 @@ export class App extends React.Component {
 
     render() {
         return (
-            <div className="cover-container d-flex h-100 p-2 mx-auto flex-column">
+            <div className="cover-container h-100 d-flex p-2 mx-auto flex-column">
                 <HeaderBar />
                 <Switch>
                     <Route exact path="/" component={LandingPage} />
