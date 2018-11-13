@@ -40,16 +40,16 @@ export class HeaderBar extends React.Component {
                 </button>
                 <div className="collapse navbar-collapse dropdown" id="navbar">
                     <ul className="navbar-nav mr-auto">
-                        <li className="nav-item">
+                        <li className="nav-item" data-toggle="collapse" data-target=".navbar-collapse">
                             {findDate}
                         </li>
-                        <li className="nav-item">
+                        <li className="nav-item" data-toggle="collapse" data-target=".navbar-collapse">
                             {addDate}
                         </li>
-                        <li className="nav-item">
+                        <li className="nav-item" data-toggle="collapse" data-target=".navbar-collapse">
                             {myDates}
                         </li>
-                        <li className="nav-item">
+                        <li className="nav-item" data-toggle="collapse" data-target=".navbar-collapse">
                             {logOut}
                         </li>
                     </ul>

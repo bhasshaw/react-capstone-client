@@ -25,6 +25,18 @@ export const getDateError = error => ({
     error
 });
 
+export const GET_MY_DATES_SUCCESS = 'GET_MY_DATES_SUCCESS';
+export const getMyDateSuccess = data => ({
+    type: GET_MY_DATES_SUCCESS,
+    data
+});
+
+export const GET_MY_DATES_ERROR = 'GET_MY_DATES_ERROR';
+export const getMyDateError = error => ({
+    type: GET_MY_DATES_ERROR,
+    error
+});
+
 export const DELETE_DATE_SUCCESS = 'DELETE_DATE_SUCCESS';
 export const deleteDateSuccess = data => ({
     type: DELETE_DATE_SUCCESS,
@@ -68,6 +80,22 @@ export const getDates = () => (dispatch, getState) => {
     .then((data) => dispatch(getDateSuccess(data)))
     .catch(err => {
         dispatch(getDateError(err));
+    });
+};
+
+export const getMyDates = (username) => (dispatch, getState) => {
+    const authToken = getState().auth.authToken;
+    return fetch (`${API_BASE_URL}/dates/date/${username}`, {
+        method: 'GET',
+        headers: {
+            Authorization: `Bearer ${authToken}`
+        }
+    })
+    .then(res => normalizeResponseErrors(res))
+    .then(res => res.json())
+    .then((data) => dispatch(getMyDateSuccess(data)))
+    .catch(err => {
+        dispatch(getMyDateError(err));
     });
 };
 

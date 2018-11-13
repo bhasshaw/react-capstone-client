@@ -11,8 +11,14 @@ export class MyDogDatesPage extends React.Component {
     }
     handleDelete(id) {
         this.props.dispatch(deleteDate(id))
-        this.props.history.push("/mydogdates");
-	}
+        // this.props.history.push("/dashboard");
+        window.location.reload()
+    }
+    // componentDidUpdate(prevProps) {
+    //     if (this.props.dates !== prevProps.dates) {
+    //         this.props.dispatch(getDates());
+    //     }
+    // }
     render() {
         let dates = this.props.dates.map((date, i) =>
         <div className="card box-shadow mb-3" key={i}> 
@@ -23,8 +29,7 @@ export class MyDogDatesPage extends React.Component {
                 <h5 className="mb-3">{date.date}</h5>
                 <h6 className="">{date.startTime} to {date.endTime}</h6>
             </div>
-            {/* <button type="button" className="btn btn-sm btn-primary mb-3 mx-3">Update</button> */}
-            <button type="button" onClick={() => this.handleDelete(date.id)} className="btn btn-sm btn-primary mb-3 mx-3">Cancel</button>
+            <button type="submit" onClick={() => this.handleDelete(date.id)} className="btn btn-sm btn-primary mb-3 mx-3">Cancel</button>
         </div>)
         return (
             <div className="text-center text-dark bg-dark my-2 p-3">
