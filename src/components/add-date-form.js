@@ -13,7 +13,7 @@ export class AddDateForm extends React.Component {
     }
     render() {
         return (
-            <form className="my-3 add-date-form" onSubmit={this.props.handleSubmit(values =>this.onSubmit(values))}>
+            <form className="my-2 p-3 text-center bg-dark" onSubmit={this.props.handleSubmit(values =>this.onSubmit(values))}>
                 <label htmlFor="park">Park Name</label>
                 <Field
                     component={Input} 
@@ -43,7 +43,7 @@ export class AddDateForm extends React.Component {
                     validate={[required, nonEmpty]}
                 />
                 <button 
-                    className="mt-2 btn btn-primary" 
+                    className="button mt-3 mx-auto btn-sm btn-primary btn-block" 
                     type="submit" 
                     disabled={this.props.pristine || this.props.submitting}>
                     Submit

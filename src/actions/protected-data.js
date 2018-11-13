@@ -49,30 +49,13 @@ export const deleteDateError = error => ({
     error
 });
 
-export const postDate = (date) => (dispatch, getState) => {
-    const authToken = getState().auth.authToken;
-    return fetch(`${API_BASE_URL}/dates/date`, {
-        method: 'POST',
-        headers: {
-            Authorization: `Bearer ${authToken}`,
-            "Content-type": "application/json"
-        },
-        body: JSON.stringify(date)
-    })
-    .then(res => normalizeResponseErrors(res))
-    .then(res => res.json())
-    .then(data => dispatch(postDateSuccess(data)))
-    .catch(err => {
-        dispatch(postDateError(err));
-    });
-};
-
 export const getDates = () => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
     return fetch (`${API_BASE_URL}/dates/date`, {
         method: 'GET',
         headers: {
-            Authorization: `Bearer ${authToken}`
+            Authorization: `Bearer ${authToken}`,
+            "Content-type": "application/json"
         }
     })
     .then(res => normalizeResponseErrors(res))
@@ -83,19 +66,40 @@ export const getDates = () => (dispatch, getState) => {
     });
 };
 
-export const getMyDates = (username) => (dispatch, getState) => {
+export const getMyDates = (user) => (dispatch, getState) => {
+    // const user = getState().auth.currentUser.username;
     const authToken = getState().auth.authToken;
-    return fetch (`${API_BASE_URL}/dates/date/${username}`, {
+    return fetch (`${API_BASE_URL}/dates/date/${user}`, {
         method: 'GET',
         headers: {
-            Authorization: `Bearer ${authToken}`
+            Authorization: `Bearer ${authToken}`,
+            "Content-type": "application/json"
         }
     })
     .then(res => normalizeResponseErrors(res))
     .then(res => res.json())
-    .then((data) => dispatch(getMyDateSuccess(data)))
+    .then(data => dispatch(getMyDateSuccess(data)))
     .catch(err => {
         dispatch(getMyDateError(err));
+    });
+};
+
+export const postDate = (date) => (dispatch, getState) => {
+    const authToken = getState().auth.authToken;
+    const user = getState().auth.currentUser.username;
+    return fetch(`${API_BASE_URL}/dates/date`, {
+        method: 'POST',
+        headers: {
+            Authorization: `Bearer ${authToken}`,
+            "Content-type": "application/json"
+        },
+        body: JSON.stringify(date)
+    })
+    .then(res => normalizeResponseErrors(res))
+    .then(res => res.json())
+    .then(data => dispatch(postDateSuccess(user, data)))
+    .catch(err => {
+        dispatch(postDateError(err));
     });
 };
 
@@ -109,7 +113,7 @@ export const deleteDate = (id) => (dispatch, getState) => {
     })
     .then(res => normalizeResponseErrors(res))
     .then(res => res.json())
-    .then((data) => dispatch(deleteDateSuccess(data)))
+    .then(data => dispatch(deleteDateSuccess(data)))
     .catch(err => {
         dispatch(deleteDateError(err));
     });

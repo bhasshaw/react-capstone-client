@@ -46,7 +46,7 @@ export class App extends React.Component {
 
     render() {
         return (
-            <div className="cover-container d-flex h-100 p-3 mx-auto flex-column">
+            <div className="cover-container d-flex h-100 p-2 mx-auto flex-column">
                 <HeaderBar />
                 <Switch>
                     <Route exact path="/" component={LandingPage} />

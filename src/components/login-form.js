@@ -18,7 +18,7 @@ export class LoginForm extends React.Component {
         let error;
         if (this.props.error) {
             error = (
-                <div className="form-error" aria-live="polite">
+                <div className="form-error text-danger" aria-live="polite">
                     {this.props.error}
                 </div>
             );
@@ -26,12 +26,11 @@ export class LoginForm extends React.Component {
         
         return (
             <form
-                className="my-2 login-form p-3 text-center bg-dark"
+                className="my-2 p-3 text-center bg-dark"
                 onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values)
                 )}>
-                {error}
-                <div className="form-group">
+                {/* <div className="form-group"> */}
                 <label htmlFor="username">Username</label>
                 <Field
                     component={Input}
@@ -40,7 +39,7 @@ export class LoginForm extends React.Component {
                     id="username"
                     validate={[required, nonEmpty]}
                 />
-                </div>
+                {/* </div> */}
                 <label htmlFor="password">Password</label>
                 <Field
                     component={Input}
@@ -49,10 +48,11 @@ export class LoginForm extends React.Component {
                     id="password"
                     validate={[required, nonEmpty]}
                 />
-                <button type="submit" className="button mt-2 mx-auto btn-sm btn-primary btn-block" disabled={this.props.pristine || this.props.submitting}>
+                {error}
+                <button type="submit" className="button mt-3 mx-auto btn-sm btn-primary btn-block" disabled={this.props.pristine || this.props.submitting}>
                     Sign In
                 </button>
-                <Link to="/register"><button className="button mt-2 mx-auto btn-sm btn-primary btn-block">Register</button></Link>
+                <Link to="/register"><button className="button mt-4 mx-auto btn-sm btn-primary btn-block">Register</button></Link>
             </form>
         );
     }

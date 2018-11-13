@@ -20,7 +20,7 @@ export class RegistrationForm extends React.Component {
     render() {
         return (
             <form
-                className="my-3 login-form"
+                className="my-2 p-3 text-center bg-dark"
                 onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values)
                 )}>
@@ -50,14 +50,12 @@ export class RegistrationForm extends React.Component {
                     validate={[required, nonEmpty, matchesPassword]}
                 />
                 <button
-                    className="mt-2 btn btn-primary"
+                    className="button mt-3 mx-auto btn-sm btn-primary btn-block"
                     type="button submit"
                     disabled={this.props.pristine || this.props.submitting}>
                     Register
                 </button>
-                <div>
-                    <Link to="/">Login</Link>
-                </div>
+                <Link to="/"><button className="button mt-4 mx-auto btn-sm btn-primary btn-block">Sign In</button></Link>
             </form>
         );
     }
