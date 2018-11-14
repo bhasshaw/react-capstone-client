@@ -8,27 +8,27 @@ An application that allows dog owners to find and schedule dog play dates at loc
 
 ### Front End ###
 
-*JavaScript
-*HTML
-*React
-*Redux
-*CSS
-*Sass
-*Bootstrap 4
+* JavaScript
+* HTML
+* React
+* Redux
+* CSS
+* Sass
+* Bootstrap 4
 
 ### Back End ###
 
-*Node.js
-*Mongo
-*Mongoose
-*Express
-*Mocha
-*Chai
-*bcryptjs
-*Passport
+* Node.js
+* Mongo
+* Mongoose
+* Express
+* Mocha
+* Chai
+* bcryptjs
+* Passport
 
 ### Programs ###
 
-*Heroku
-*TravisCI
-*mLab
+* Heroku
+* TravisCI
+* mLab
