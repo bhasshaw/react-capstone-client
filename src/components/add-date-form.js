@@ -24,21 +24,21 @@ export class AddDateForm extends React.Component {
                 <label htmlFor="date">Date</label>
                 <Field 
                     component={Input} 
-                    type="text" 
+                    type="date" 
                     name="date" 
                     validate={[required, nonEmpty]}
                 />
                 <label htmlFor="startTime">Start Time</label>
                 <Field 
                     component={Input} 
-                    type="text" 
+                    type="time" 
                     name="startTime"
                     validate={[required, nonEmpty]}
                 />
                 <label htmlFor="endTime">End Time</label>
                 <Field 
                     component={Input} 
-                    type="text" 
+                    type="time" 
                     name="endTime" 
                     validate={[required, nonEmpty]}
                 />

@@ -9,6 +9,7 @@ export class Dashboard extends React.Component {
     render() {
         return (
         <div className="dashboard position-relative overflow-hidden p-4 p-md-5 my-2 text-center bg-dark h-100">
+            <h3 className="mb-3">Hello, {this.props.name}!</h3>
             <div className="row">
                 <div className="col-lg-4">
                     <img className="rounded-circle" src={calendar} alt="Generic placeholder" width="140" height="140"></img>
