@@ -10,7 +10,7 @@ export class FindDatePage extends React.Component {
     render() {
         let dates = this.props.dates.map((date, i) =>
         <div className="card box-shadow mb-3" key={i}> 
-            <div className="card-header text-primary">
+            <div className="card-header">
                 <h4>{date.park}</h4>
             </div>
             <div className="card-body">
@@ -20,7 +20,7 @@ export class FindDatePage extends React.Component {
             <button type="button" className="btn btn-sm btn-primary mb-3 mx-3">RSVP</button>
         </div>)
         return (
-            <div className="text-center text-dark bg-dark my-2 p-3">
+            <div className="text-center text-dark bg-dark my-2 px-3 pt-3">
                 <div className="card-deck">
                     {dates}
                 </div>

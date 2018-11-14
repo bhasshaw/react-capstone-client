@@ -32,7 +32,7 @@ export class MyDogDatesPage extends React.Component {
             <button type="submit" onClick={() => this.handleDelete(date.id)} className="btn btn-sm btn-primary mb-3 mx-3">Cancel</button>
         </div>)
         return (
-            <div className="text-center text-dark bg-dark my-2 p-3">
+            <div className="text-center text-dark bg-dark my-2 px-3 pt-3">
                 <div className="card-deck">
                     {dates}
                 </div>
