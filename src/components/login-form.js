@@ -49,7 +49,7 @@ export class LoginForm extends React.Component {
                 <button type="submit" className="button mt-3 mx-auto btn-sm btn-primary btn-block" disabled={this.props.pristine || this.props.submitting}>
                     Sign In
                 </button>
-                <Link to="/register"><button className="button mt-4 mx-auto btn-sm btn-primary btn-block">Register</button></Link>
+                <Link to="/register"><button className="button mt-4 mx-auto btn-sm btn-primary btn-block">Not enrolled?</button></Link>
             </form>
         );
     }

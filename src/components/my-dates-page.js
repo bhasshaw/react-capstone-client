@@ -3,7 +3,6 @@ import {connect} from 'react-redux';
 import {getMyDates} from '../actions/protected-data';
 import {deleteDate} from '../actions/protected-data';
 import './main.css';
-// import {Redirect} from 'react-router-dom';
 
 export class MyDogDatesPage extends React.Component {
     componentWillMount() {
@@ -11,14 +10,8 @@ export class MyDogDatesPage extends React.Component {
     }
     handleDelete(id) {
         this.props.dispatch(deleteDate(id))
-        // this.props.history.push("/dashboard");
         window.location.reload()
     }
-    // componentDidUpdate(prevProps) {
-    //     if (this.props.dates !== prevProps.dates) {
-    //         this.props.dispatch(getDates());
-    //     }
-    // }
     render() {
         let dates = this.props.dates.map((date, i) =>
         <div className="card mb-3" key={i}> 

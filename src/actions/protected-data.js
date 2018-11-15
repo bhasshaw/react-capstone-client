@@ -86,7 +86,6 @@ export const getMyDates = () => (dispatch, getState) => {
 
 export const postDate = (date) => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
-    // const user = getState().auth.currentUser.username;
     return fetch(`${API_BASE_URL}/dates/date`, {
         method: 'POST',
         headers: {
