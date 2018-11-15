@@ -8,6 +8,7 @@ import {withRouter} from 'react-router-dom';
 
 export class AddDateForm extends React.Component {
     onSubmit(values) {
+        values.username = this.props.username;
         this.props.dispatch(postDate(values));
         this.props.history.push("/dashboard");
     }
@@ -53,8 +54,12 @@ export class AddDateForm extends React.Component {
     }
 }
 
+const mapStateToProps = state => ({
+    username: state.auth.currentUser.username
+});
+
 export default reduxForm({
     form: 'add',
     onSubmitFail: (errors, dispatch) =>
         dispatch(focus('contact', Object.keys(errors)[0]))
-})(withRouter(connect()(AddDateForm)));
+})(withRouter(connect(mapStateToProps)(AddDateForm)));
