@@ -14,15 +14,16 @@ export class FindDatePage extends React.Component {
                 <h4>{date.park}</h4>
             </div>
             <div className="card-body">
+                <h5 className="mb-3">{date.user}</h5>
                 <h5 className="mb-3">{date.date}</h5>
                 <h6 className="">{date.startTime} to {date.endTime}</h6>
             </div>
-            <button type="button" className="btn btn-sm btn-primary mb-3 mx-3">RSVP</button>
+            <button type="button" className="btn btn-sm btn-primary mb-3 mx-3">Join (coming soon)</button>
         </div>)
         return (
             <div className="text-center text-dark bg-dark my-2 px-3 pt-3">
                 <div className="text-light">
-                    <p>RSVP for an upcoming play dates!</p>
+                    <p>Join an upcoming play date!</p>
                 </div>
                 <div className="card-deck">
                     {dates}

@@ -13,6 +13,7 @@ const initialState = {
     dates: [],
     date: {
         id: null,
+        user: null,
 		park: null,
 		date: null,
         startTime: null,
