@@ -13,14 +13,14 @@ html, body, #app, #app>div {
 }
 
 .button {
-  width: 200px;
+  width: 250px;
 }
 
 .input {
   border: none;
   border-bottom: 2px solid white;
   color: white;
-  width: 200px;
+  width: 250px;
 }
 
 .card-deck .card {

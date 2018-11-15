@@ -1,13 +1,13 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {getDates} from '../actions/protected-data';
+import {getMyDates} from '../actions/protected-data';
 import {deleteDate} from '../actions/protected-data';
 import './main.css';
 // import {Redirect} from 'react-router-dom';
 
 export class MyDogDatesPage extends React.Component {
     componentWillMount() {
-		this.props.dispatch(getDates());
+		this.props.dispatch(getMyDates());
     }
     handleDelete(id) {
         this.props.dispatch(deleteDate(id))
@@ -22,7 +22,7 @@ export class MyDogDatesPage extends React.Component {
     render() {
         let dates = this.props.dates.map((date, i) =>
         <div className="card mb-3" key={i}> 
-            <div className="card-header">
+            <div className="card-header border-bottom-0 bg-secondary">
                 <h4>{date.park}</h4>
             </div>
             <div className="card-body">
@@ -34,7 +34,7 @@ export class MyDogDatesPage extends React.Component {
         return (
             <div className="text-center bg-dark text-dark my-2 px-3 pt-3">
                 <div className="text-light">
-                    <p>You can view and cancel the play dates you have scheduled.</p>
+                    <p>From here you can view and cancel your play dates you have scheduled.</p>
                 </div>
                 <div className="card-deck">
                     {dates}

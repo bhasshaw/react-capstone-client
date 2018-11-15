@@ -37,9 +37,9 @@ export class AddDateForm extends React.Component {
                 />
                 <label htmlFor="endTime">End Time</label>
                 <Field 
-                    component={Input} 
-                    type="time" 
-                    name="endTime" 
+                    component={Input}
+                    type="time"
+                    name="endTime"
                     validate={[required, nonEmpty]}
                 />
                 <button 
