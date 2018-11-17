@@ -5,6 +5,7 @@ import MyDogDates from './my-dates-btn';
 import {connect} from 'react-redux';
 import {clearAuth} from '../actions/auth';
 import {clearAuthToken} from '../local-storage';
+import '../index.css';
 
 export class HeaderBar extends React.Component {
     logOut() {
