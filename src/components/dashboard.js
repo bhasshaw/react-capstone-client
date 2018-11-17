@@ -8,7 +8,7 @@ import check from '../views/check.png';
 export class Dashboard extends React.Component {
     render() {
         return (
-        <div className="dashboard position-relative overflow-hidden p-4 p-md-5 my-2 text-center bg-dark">
+        <div className="position-relative p-4 my-2 text-center bg-dark">
             <h3 className="mb-3">Hello, {this.props.name}!</h3>
             <div className="row">
                 <div className="col-lg-4">
