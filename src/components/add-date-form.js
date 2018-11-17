@@ -16,12 +16,15 @@ export class AddDateForm extends React.Component {
         return (
             <form className="my-2 p-3 text-center bg-dark" onSubmit={this.props.handleSubmit(values =>this.onSubmit(values))}>
                 <label htmlFor="park">Park Name</label>
+                <div>
                 <Field
                     component={Input} 
                     type="text" 
                     name="park" 
                     validate={[required, nonEmpty]}
+                    placeholder="Park Name"
                 />
+                </div>
                 <label htmlFor="date">Date</label>
                 <Field 
                     component={Input} 

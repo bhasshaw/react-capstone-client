@@ -27,7 +27,7 @@ export class MyDogDatesPage extends React.Component {
         return (
             <div className="text-center bg-dark text-dark my-2 px-3 pt-3">
                 <div className="text-light">
-                    <p>From here you can view and cancel your play dates you have scheduled.</p>
+                    <p>From here you can view and cancel your play dates you have created.</p>
                 </div>
                 <div className="card-deck">
                     {dates}
