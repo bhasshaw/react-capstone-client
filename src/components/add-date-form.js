@@ -23,6 +23,7 @@ export class AddDateForm extends React.Component {
                     name="park" 
                     validate={[required, nonEmpty]}
                     placeholder="Park Name"
+                    aria-required="true"
                 />
                 </div>
                 <label htmlFor="date">Date</label>
@@ -31,6 +32,7 @@ export class AddDateForm extends React.Component {
                     type="date" 
                     name="date" 
                     validate={[required, nonEmpty]}
+                    aria-required="true"
                 />
                 <label htmlFor="startTime">Start Time</label>
                 <Field 
@@ -38,6 +40,7 @@ export class AddDateForm extends React.Component {
                     type="time" 
                     name="startTime"
                     validate={[required, nonEmpty]}
+                    aria-required="true"
                 />
                 <label htmlFor="endTime">End Time</label>
                 <Field 
@@ -45,6 +48,7 @@ export class AddDateForm extends React.Component {
                     type="time"
                     name="endTime"
                     validate={[required, nonEmpty]}
+                    aria-required="true"
                 />
                 <button 
                     className="button mt-3 mx-auto btn-sm btn-primary btn-block" 

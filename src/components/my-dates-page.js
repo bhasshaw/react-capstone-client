@@ -2,7 +2,6 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {getMyDates} from '../actions/protected-data';
 import {deleteDate} from '../actions/protected-data';
-import './main.css';
 
 export class MyDogDatesPage extends React.Component {
     componentWillMount() {

@@ -12,7 +12,7 @@ export function LandingPage(props) {
 
     return (
         <div className="landing-page text-center home">
-            <LoginForm />
+            <LoginForm /> 
         </div>
     );
 }
