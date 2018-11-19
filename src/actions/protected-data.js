@@ -96,7 +96,8 @@ export const postDate = (date) => (dispatch, getState) => {
     })
     .then(res => normalizeResponseErrors(res))
     .then(res => res.json())
-    .then(data => dispatch(postDateSuccess(data)))
+    // .then(data => dispatch(postDateSuccess(data)))
+    .then(data => dispatch(getMyDates(data)))
     .catch(err => {
         dispatch(postDateError(err));
     });
