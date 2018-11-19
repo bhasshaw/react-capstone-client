@@ -9,8 +9,8 @@ export class MyDogDatesPage extends React.Component {
     }
     handleDelete(id) {
         this.props.dispatch(deleteDate(id))
-        this.props.dispatch(getMyDates());
-        // window.location.reload()
+        // this.props.dispatch(getMyDates());
+        window.location.reload()
     }
     render() {
         let dates = this.props.dates.map((date, i) =>
