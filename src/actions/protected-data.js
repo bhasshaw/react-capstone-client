@@ -113,8 +113,8 @@ export const deleteDate = (id) => (dispatch, getState) => {
     })
     .then(res => normalizeResponseErrors(res))
     .then(res => res.json())
-    // .then(data => dispatch(deleteDateSuccess(data)))
-    .then(data => dispatch(getMyDates(data)))
+    .then(data => dispatch(deleteDateSuccess(data)))
+    // .then(data => dispatch(getMyDates(data)))
     .catch(err => {
         dispatch(deleteDateError(err));
     });
