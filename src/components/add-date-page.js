@@ -6,6 +6,9 @@ export function AddDatePage(props) {
    
     return (
         <div className="text-center bg-dark my-2">
+            <div className="mx-5 mt-4">
+                <p>After filling out the following information, a play date will be added to the Find page.</p>
+            </div>
             <AddDateForm  />
         </div>
     );

@@ -35,7 +35,6 @@ export class HeaderBar extends React.Component {
         
         return (
             <nav className="navbar navbar-dark bg-dark masthead mb-auto rounded-top">
-                {/* <a className="navbar-brand" href="/dashboard">DogDates</a> */}
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>

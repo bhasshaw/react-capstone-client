@@ -5,6 +5,7 @@ import {required, nonEmpty} from '../validators';
 import Input from './input';
 import {postDate} from '../actions/protected-data';
 import {withRouter} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 export class AddDateForm extends React.Component {
     onSubmit(values) {
@@ -56,6 +57,7 @@ export class AddDateForm extends React.Component {
                     disabled={this.props.pristine || this.props.submitting}>
                     Submit
                 </button>
+                <Link to="/dashboard"><button className="button mt-3 mx-auto btn-sm btn-primary btn-block">Cancel</button></Link>
             </form>
         );
     }
