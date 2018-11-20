@@ -8,14 +8,9 @@ An application that allows dog owners in the Portland Oregon area to find and sc
 
 ## Screenshots ##
 
-<img src="src/views/login.png"><img src="src/views/enroll.png">
-<!-- <img src="src/views/enroll.png"> -->
-<img src="src/views/landing.png">
-<img src="src/views/landing2.png">
-<img src="src/views/navbar.png">
-<img src="src/views/create.png">
-<img src="src/views/dates.png">
-<img src="src/views/mydates.png">
+<img src="src/views/login.png"><img src="src/views/enroll.png"><img src="src/views/landing.png">
+<img src="src/views/landing2.png"><img src="src/views/navbar.png"><img src="src/views/create.png">
+<img src="src/views/dates.png"><img src="src/views/mydates.png">
 
 ## Technology Used ##
 
