@@ -20,7 +20,7 @@ export class Dashboard extends React.Component {
                 <div className="col-lg-4">
                     <img className="rounded-circle" src={magnify} alt="Generic placeholder" width="140" height="140"></img>
                     <h2 className="pt-3">Find</h2>
-                    <p>You can also search for play dates in the Portland! Find play dates that other dog owners have 
+                    <p>You can also search for play dates in Portland! Find play dates that other dog owners have 
                         scheduled and meet up with them!</p>
                 </div>
                 <div className="col-lg-4">

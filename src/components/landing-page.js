@@ -11,7 +11,12 @@ export function LandingPage(props) {
     }
 
     return (
-        <div className="landing-page text-center home">
+        <div className="text-center bg-dark my-2 login">
+            <div className="mx-5 mt-4">
+                <h4>Please log in</h4>
+                <p>Username: dogdatestest</p>
+                <p>Password: dogdatestest</p>
+            </div>
             <LoginForm /> 
         </div>
     );
