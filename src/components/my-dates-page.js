@@ -1,16 +1,15 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {getMyDates} from '../actions/protected-data';
-import {deleteDate} from '../actions/protected-data';
+// import {getMyDates} from '../actions/protected-data';
+import { deleteDate, getMyDates } from '../actions/protected-data';
 
 export class MyDogDatesPage extends React.Component {
+    handleDelete(id) {
+        this.props.dispatch(deleteDate(id));
+        this.props.dispatch(getMyDates());
+    }
     componentWillMount() {
 		this.props.dispatch(getMyDates());
-    }
-    handleDelete(id) {
-        this.props.dispatch(deleteDate(id))
-        // this.props.dispatch(getMyDates());
-        window.location.reload()
     }
     render() {
         let dates = this.props.dates.map((date, i) =>
