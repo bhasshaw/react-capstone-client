@@ -75,7 +75,7 @@ describe('getMyDateError', () => {
     });
 });
 
-// DELETE DATE TEST
+// DELETE TESTS
 
 describe('deleteDateSuccess', () => {
     it('Should return the action', () => {
