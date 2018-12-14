@@ -46,9 +46,11 @@ export class LoginForm extends React.Component {
                     aria-required="true"
                 />
                 {error}
-                <h5>Demo Login</h5>
-                <h6>Username: dogdatestest</h6>
-                <h6>Password: dogdatestest</h6>
+                <div className="mt-3 mb-4">
+                    <h5>Demo Login</h5>
+                    <h6>Username: dogdatestest</h6>
+                    <h6>Password: dogdatestest</h6>
+                </div>
                 <button type="submit" className="button mt-3 mx-auto btn-sm btn-primary btn-block" disabled={this.props.pristine || this.props.submitting}>
                     Sign In
                 </button>
