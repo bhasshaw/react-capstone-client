@@ -15,8 +15,8 @@ export class AddDateForm extends React.Component {
     }
     render() {
         return (
-            <form className="my-2 p-3 text-center bg-dark" onSubmit={this.props.handleSubmit(values =>this.onSubmit(values))}>
-                <label htmlFor="park">Park Name</label>
+            <form className="mb-5 p-3 text-center bg-dark" onSubmit={this.props.handleSubmit(values =>this.onSubmit(values))}>
+                <label htmlFor="park" className="h5">Park Name</label>
                 <div>
                 <Field
                     component={Input} 
@@ -27,7 +27,7 @@ export class AddDateForm extends React.Component {
                     aria-required="true"
                 />
                 </div>
-                <label htmlFor="date">Date</label>
+                <label htmlFor="date" className="h5 mt-3">Date</label>
                 <Field 
                     component={Input} 
                     type="date" 
@@ -35,7 +35,7 @@ export class AddDateForm extends React.Component {
                     validate={[required, nonEmpty]}
                     aria-required="true"
                 />
-                <label htmlFor="startTime">Start Time</label>
+                <label htmlFor="startTime" className="h5 mt-3">Start Time</label>
                 <Field 
                     component={Input} 
                     type="time" 
@@ -43,7 +43,7 @@ export class AddDateForm extends React.Component {
                     validate={[required, nonEmpty]}
                     aria-required="true"
                 />
-                <label htmlFor="endTime">End Time</label>
+                <label htmlFor="endTime" className="h5 mt-3">End Time</label>
                 <Field 
                     component={Input}
                     type="time"
@@ -52,7 +52,7 @@ export class AddDateForm extends React.Component {
                     aria-required="true"
                 />
                 <button 
-                    className="button mt-4 mx-auto btn-sm btn-primary btn-block" 
+                    className="button mt-5 mx-auto btn-sm btn-primary btn-block" 
                     type="submit" 
                     disabled={this.props.pristine || this.props.submitting}>
                     Submit
