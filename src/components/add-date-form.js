@@ -52,7 +52,7 @@ export class AddDateForm extends React.Component {
                     aria-required="true"
                 />
                 <button 
-                    className="button mt-3 mx-auto btn-sm btn-primary btn-block" 
+                    className="button mt-4 mx-auto btn-sm btn-primary btn-block" 
                     type="submit" 
                     disabled={this.props.pristine || this.props.submitting}>
                     Submit
