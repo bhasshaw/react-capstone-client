@@ -12,7 +12,7 @@ export function LandingPage(props) {
 
     return (
         <div className="text-center bg-dark my-2 login">
-            <div className="mx-5 mt-4">
+            <div className="mx-5 mt-5">
                 <h4>Please log in</h4>
             </div>
             <LoginForm /> 

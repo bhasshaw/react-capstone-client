@@ -20,7 +20,7 @@ export class RegistrationForm extends React.Component {
     render() {
         return (
             <form
-                className="my-2 p-3 text-center bg-dark"
+                className="my-4 p-3 text-center bg-dark"
                 onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values)
                 )}>
@@ -61,7 +61,7 @@ export class RegistrationForm extends React.Component {
                     aria-required="true"
                 />
                 <button
-                    className="button mt-3 mx-auto btn-sm btn-primary btn-block"
+                    className="button mt-5 mx-auto btn-sm btn-primary btn-block"
                     type="button submit"
                     disabled={this.props.pristine || this.props.submitting}>
                     Submit

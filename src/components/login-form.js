@@ -46,8 +46,8 @@ export class LoginForm extends React.Component {
                     aria-required="true"
                 />
                 {error}
-                <div className="mt-3 mb-4">
-                    <h5>Demo Login</h5>
+                <div className="my-5 mb-4">
+                    <h4 className="my-4">Demo Login</h4>
                     <h6>Username: dogdatestest</h6>
                     <h6>Password: dogdatestest</h6>
                 </div>
