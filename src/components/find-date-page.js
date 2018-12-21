@@ -1,7 +1,9 @@
 import React from 'react';
+import Moment from 'react-moment';
+import 'moment-timezone';
+// import Time from 'react-time';
 import {connect} from 'react-redux';
 import {getDates} from '../actions/protected-data';
-// import {Redirect} from 'react-router-dom';
 
 export class FindDatePage extends React.Component {
     componentWillMount() {
@@ -14,8 +16,8 @@ export class FindDatePage extends React.Component {
                 <h4>{date.park}</h4>
             </div>
             <div className="card-body">
-                <h6 className="mb-3">Date: {date.date}</h6>
-                <h6 className="mb-3">Time: {date.startTime} to {date.endTime}</h6>
+                <h6 className="mb-3"><Moment format="M-DD-YYYY">{date.date}</Moment></h6>
+                <h6 className="mb-3">{date.startTime} to {date.endTime}</h6>
                 <h6 className="">Host: {date.username}</h6>
             </div>
             <button type="button" className="btn btn-sm btn-primary mb-3 mx-3">Join (coming soon)</button>

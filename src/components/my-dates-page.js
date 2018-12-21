@@ -1,4 +1,6 @@
 import React from 'react';
+import Moment from 'react-moment';
+import 'moment-timezone';
 import {connect} from 'react-redux';
 import { deleteDate, getMyDates } from '../actions/protected-data';
 
@@ -17,7 +19,7 @@ export class MyDogDatesPage extends React.Component {
                 <h4>{date.park}</h4>
             </div>
             <div className="card-body">
-                <h5 className="mb-3">{date.date}</h5>
+                <h5 className="mb-3"><Moment format="M-DD-YYYY">{date.date}</Moment></h5>
                 <h6 className="">{date.startTime} to {date.endTime}</h6>
             </div>
             <button type="submit" onClick={() => this.handleDelete(date.id)} className="btn btn-sm btn-primary mb-3 mx-3">Cancel</button>
