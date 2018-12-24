@@ -11,7 +11,7 @@ export class FindDatePage extends React.Component {
 	}
     render() {
         let dates = this.props.dates.map((date, i) =>
-        <div className="card mb-3" key={i}> 
+        <div className="card mb-3" key={i}>
             <div className="card-header border-bottom-0 bg-secondary">
                 <h4>{date.park}</h4>
             </div>
