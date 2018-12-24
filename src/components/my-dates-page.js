@@ -13,7 +13,7 @@ export class MyDogDatesPage extends React.Component {
 		this.props.dispatch(getMyDates());
     }
     render() {
-        let dates = this.props.dates.map((date, i) =>
+        let dates = this.props.dates.map((date, i) => 
         <div className="card mb-3" key={i}> 
             <div className="card-header border-bottom-0 bg-secondary">
                 <h4>{date.park}</h4>
@@ -27,7 +27,7 @@ export class MyDogDatesPage extends React.Component {
         return (
             <div className="text-center bg-dark text-dark my-2 px-3 pt-3">
                 <div className="text-light">
-                    <p>From here you can view and cancel your play dates you have created.</p>
+                    <p>From here you can view and cancel the play dates you have created.</p>
                 </div>
                 <div className="card-deck">
                     {dates}
