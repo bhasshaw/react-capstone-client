@@ -5,7 +5,7 @@ Back End Repo: [GitHub](https://github.com/bhasshaw/react-capstone-api)
 
 ## What is DogDates? ##
 
-An application that allows dog owners in the Portland Oregon area to find and schedule dog play dates at local parks.
+An application that allows dog owners to find and schedule dog play dates at local parks.
 
 ## Screenshots ##
 
