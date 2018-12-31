@@ -29,6 +29,8 @@ export class HeaderBar extends React.Component {
             myDates = (
                 <MyDogDates />
             );
+        } else {
+            myDates = ('Please log in or enroll first');
         }
         
         return (
