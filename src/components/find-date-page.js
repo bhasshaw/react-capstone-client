@@ -1,7 +1,6 @@
 import React from 'react';
 import Moment from 'react-moment';
 import 'moment-timezone';
-// import Time from 'react-time';
 import {connect} from 'react-redux';
 import {getDates} from '../actions/protected-data';
 
