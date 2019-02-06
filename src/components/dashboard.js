@@ -31,6 +31,7 @@ export class Dashboard extends React.Component {
                         meeting new friends!</p>
                 </div>
             </div>
+            <h4 className="mt-3">Use navigation bar to create and search dog dates</h4>
         </div>
         </div>
         );

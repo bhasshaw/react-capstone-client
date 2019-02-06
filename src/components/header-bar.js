@@ -18,7 +18,7 @@ export class HeaderBar extends React.Component {
         let myDates;
         if (this.props.loggedIn) {
             logOut = (
-                <a href="./dashboard" className="nav-link" onClick={() => this.logOut()}>Log Out</a>
+                <a href="./dashboard" className="nav-link text-white" onClick={() => this.logOut()}>Log Out</a>
             );
             addDate = (
                 <AddDate />
